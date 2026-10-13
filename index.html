@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Partnership Proposal — IICP × TOPS Technologies</title>
-<meta name="description" content="White-labelled placement enablement partnership proposal from IICP for TOPS Technologies." />
+<title>Partnership Proposal — IICP × Computer Institute</title>
+<meta name="description" content="White-labelled placement enablement partnership proposal from IICP for computer institutes." />
 
 <style>
   /* ---------- RESET & BASE ---------- */
@@ -46,22 +46,43 @@
   /* ---------- TOP BAR ---------- */
   .topbar {
     position: sticky; top: 0; z-index: 50;
-    background: rgba(255,255,255,.92);
+    background: rgba(255,255,255,.94);
     backdrop-filter: blur(10px);
     border-bottom: 1px solid var(--line);
   }
   .topbar-inner {
     display: flex; align-items: center; justify-content: space-between;
-    gap: 16px; padding: 12px 0;
+    gap: 14px; padding: 11px 0; flex-wrap: wrap;
   }
   .logo { display: flex; align-items: center; gap: 10px; font-weight: 800; letter-spacing: .2px; }
   .logo-mark {
     width: 38px; height: 38px; border-radius: 10px;
     background: linear-gradient(135deg, var(--brand), #4f7cff);
     color: #fff; display: grid; place-items: center;
-    font-size: 14px; font-weight: 800; letter-spacing: .5px;
+    font-size: 13px; font-weight: 800; letter-spacing: .5px;
   }
+  .logo-text { font-size: 15px; }
   .logo-text small { display: block; font-size: 11px; font-weight: 500; color: var(--ink-soft); letter-spacing: .3px; }
+
+  /* institute name field */
+  .inst-field {
+    display: flex; align-items: center; gap: 9px;
+    background: var(--brand-soft);
+    border: 1px solid #dbe4ff;
+    border-radius: 10px;
+    padding: 6px 12px;
+  }
+  .inst-field label {
+    font-size: 10.5px; font-weight: 800; letter-spacing: .9px;
+    text-transform: uppercase; color: var(--brand); white-space: nowrap;
+  }
+  .inst-field input {
+    border: none; background: transparent; outline: none;
+    font-family: inherit; font-size: 14px; font-weight: 700; color: var(--ink);
+    width: 168px; padding: 2px 0;
+    border-bottom: 1px dashed #b9c8f2;
+  }
+  .inst-field input:focus { border-bottom-color: var(--brand); }
 
   .top-actions { display: flex; gap: 8px; }
 
@@ -84,7 +105,7 @@
       radial-gradient(900px 400px at 85% -10%, rgba(79,124,255,.28), transparent 60%),
       linear-gradient(160deg, #0b1a3f 0%, #14296b 55%, #1d4ed8 130%);
     color: #fff;
-    padding: 68px 0 76px;
+    padding: 66px 0 74px;
     position: relative;
     overflow: hidden;
   }
@@ -110,16 +131,14 @@
   .dot { width: 7px; height: 7px; border-radius: 50%; background: #34d399; box-shadow: 0 0 0 4px rgba(52,211,153,.22); }
 
   .hero h1 {
-    font-size: clamp(30px, 5vw, 46px);
+    font-size: clamp(29px, 5vw, 45px);
     line-height: 1.15; font-weight: 800; letter-spacing: -.5px;
     margin: 20px 0 14px;
   }
-  .hero h1 span { color: #ffd977; }
-  .hero p.lead { font-size: 17px; color: #cfd9f5; max-width: 640px; }
+  .hero h1 .hl { color: #ffd977; }
+  .hero p.lead { font-size: 17px; color: #cfd9f5; max-width: 660px; }
 
-  .hero-meta {
-    display: flex; flex-wrap: wrap; gap: 10px; margin-top: 28px;
-  }
+  .hero-meta { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 28px; }
   .chip {
     background: rgba(255,255,255,.1);
     border: 1px solid rgba(255,255,255,.16);
@@ -128,20 +147,20 @@
   }
 
   /* ---------- SECTION ---------- */
-  section { padding: 62px 0; }
-  .section-head { margin-bottom: 34px; }
+  section { padding: 60px 0; }
+  .section-head { margin-bottom: 32px; }
   .eyebrow {
     font-size: 12px; font-weight: 800; letter-spacing: 1.6px;
     text-transform: uppercase; color: var(--brand); margin-bottom: 8px;
   }
   h2 { font-size: clamp(24px, 3.4vw, 32px); line-height: 1.25; letter-spacing: -.4px; font-weight: 800; }
-  .sub { color: var(--ink-soft); margin-top: 8px; font-size: 16px; max-width: 700px; }
+  .sub { color: var(--ink-soft); margin-top: 8px; font-size: 16px; max-width: 720px; }
 
   /* ---------- INTRO CARD ---------- */
   .intro {
     background: var(--white); border: 1px solid var(--line);
     border-radius: var(--radius); box-shadow: var(--shadow-sm);
-    padding: 28px; display: grid; gap: 18px;
+    padding: 28px; display: grid; gap: 22px;
     grid-template-columns: 1fr auto; align-items: center;
   }
   .intro p { color: var(--ink-soft); font-size: 15.5px; }
@@ -245,7 +264,7 @@
   .why-item h4 { font-size: 16px; font-weight: 700; margin-bottom: 6px; }
   .why-item p { font-size: 14.5px; color: var(--ink-soft); }
 
-  /* ---------- CONTACT / CTA ---------- */
+  /* ---------- CTA ---------- */
   .cta {
     background: linear-gradient(160deg, #0b1a3f, #1739a8);
     color: #fff; border-radius: 18px; padding: 42px 34px;
@@ -291,6 +310,8 @@
     box-shadow: 0 12px 30px rgba(0,0,0,.28);
     transition: transform .35s cubic-bezier(.2,.9,.3,1.3);
     z-index: 100;
+    max-width: calc(100% - 32px);
+    text-align: center;
   }
   .toast.show { transform: translate(-50%, 0); }
 
@@ -304,6 +325,10 @@
   }
 
   /* ---------- RESPONSIVE ---------- */
+  @media (max-width: 860px) {
+    .inst-field { order: 3; flex: 1 1 100%; }
+    .inst-field input { width: 100%; flex: 1; }
+  }
   @media (max-width: 780px) {
     .intro { grid-template-columns: 1fr; }
     .price-box { grid-template-columns: 1fr; padding: 26px; }
@@ -313,10 +338,11 @@
     .top-actions .btn-ghost { display: none; }
   }
   @media (max-width: 520px) {
-    .logo-text { font-size: 14px; }
+    .logo-text { font-size: 13.5px; }
     .btn { padding: 9px 14px; font-size: 13px; }
     .card { padding: 22px; }
     .cta { padding: 30px 22px; }
+    .stat-row { gap: 18px; }
   }
 
   /* ---------- PRINT ---------- */
@@ -337,6 +363,7 @@
 <!-- ================= TOP BAR ================= -->
 <header class="topbar">
   <div class="wrap topbar-inner">
+
     <div class="logo">
       <div class="logo-mark">IICP</div>
       <div class="logo-text">
@@ -344,10 +371,18 @@
         <small>Powered by Equimedia Solutions</small>
       </div>
     </div>
+
+    <div class="inst-field">
+      <label for="instInput">Institute</label>
+      <input id="instInput" type="text" value="Your Institute" placeholder="Type institute name"
+             autocomplete="off" spellcheck="false" aria-label="Institute name" />
+    </div>
+
     <div class="top-actions">
       <button class="btn btn-ghost" id="copyBtn" type="button">📋 Copy Text</button>
       <button class="btn btn-primary" id="printBtn" type="button">🖨️ Print / PDF</button>
     </div>
+
   </div>
 </header>
 
@@ -355,7 +390,7 @@
 <section class="hero">
   <div class="wrap">
     <span class="pill"><span class="dot"></span> Partnership Proposal</span>
-    <h1>Making TOPS Technologies Students <span>100% Job-Ready</span></h1>
+    <h1>Making <span class="inst">Your Institute</span> Students <span class="hl">100% Job-Ready</span></h1>
     <p class="lead">
       A fully white-labelled placement enablement programme — live lectures, verified placement
       alerts, internship projects with experience letters, and a student portal carrying
@@ -376,10 +411,11 @@
     <div class="intro reveal">
       <div>
         <p>
-          Hello Team <strong>TOPS Technologies</strong>,<br /><br />
+          Hello Team <strong class="inst">Your Institute</strong>,<br /><br />
           I am <strong>Dr. Sachin Ambekar</strong>, Founder of <strong>IICP (Industry Integrated Career Platform)</strong>.
           With over <strong>20 years</strong> of experience across Corporate HR, Academia and Entrepreneurship,
-          I help institutes prepare students for real jobs — <strong>without adding any extra work for your staff</strong>.
+          I help computer institutes prepare students for real jobs —
+          <strong>without adding any extra work for your staff</strong>.
         </p>
         <p style="margin-top:14px">
           🌐 Website: <a href="https://iicpedu.github.io/" target="_blank" rel="noopener">https://iicpedu.github.io/</a>
@@ -399,8 +435,8 @@
   <div class="wrap">
     <div class="section-head reveal">
       <div class="eyebrow">What You Get</div>
-      <h2>Proposal for TOPS Technologies</h2>
-      <p class="sub">Six ready-to-run modules. Everything is branded with the TOPS Technologies name and logo.</p>
+      <h2>Proposal for <span class="inst">Your Institute</span></h2>
+      <p class="sub">Seven ready-to-run modules. Everything is branded with your institute's name and logo.</p>
     </div>
 
     <div class="grid">
@@ -439,7 +475,7 @@
       <article class="card reveal">
         <div class="card-top">
           <div class="num">3</div>
-          <h3>Student Portal — TOPS Branding</h3>
+          <h3>Student Portal — Your Branding</h3>
         </div>
         <ul>
           <li>CV / resume builder</li>
@@ -470,7 +506,7 @@
       <article class="card reveal">
         <div class="card-top">
           <div class="num">5</div>
-          <h3>Weekly Newsletter — TOPS Branding</h3>
+          <h3>Weekly Newsletter — Your Branding</h3>
         </div>
         <ul>
           <li>PDF with your logo and contact details</li>
@@ -494,6 +530,22 @@
         <span class="tag">Simple &amp; Clear</span>
       </article>
 
+      <!-- 7 — NEW FEATURE -->
+      <article class="card reveal">
+        <div class="card-top">
+          <div class="num">7</div>
+          <h3>GitHub &amp; LinkedIn Profile Optimization</h3>
+        </div>
+        <ul>
+          <li>Step-by-step GitHub and LinkedIn profile setup</li>
+          <li>Keyword optimization to appear in recruiter searches</li>
+          <li>Project showcase and portfolio building</li>
+          <li>Profile review and feedback from an industry mentor</li>
+          <li>Tips to improve recruiter response rate</li>
+        </ul>
+        <span class="tag">Recruiter Magnet</span>
+      </article>
+
     </div>
   </div>
 </section>
@@ -515,15 +567,16 @@
           <span class="val">9,500</span>
           <span class="per">/ month</span>
         </div>
-        <p class="price-note">All six modules listed above are included in this single price.</p>
+        <p class="price-note">All seven modules listed above are included in this single price.</p>
       </div>
       <ul class="price-list">
         <li><span class="tick">✓</span> Weekly live lecture — 1 hour × 4 per month</li>
         <li><span class="tick">✓</span> Verified placement alerts to your WhatsApp group</li>
-        <li><span class="tick">✓</span> Student portal with TOPS Technologies branding</li>
+        <li><span class="tick">✓</span> Student portal with your institute branding</li>
         <li><span class="tick">✓</span> Live internship project + Experience Letter + Certificate</li>
         <li><span class="tick">✓</span> Weekly white-labelled newsletter PDF</li>
         <li><span class="tick">✓</span> Student attendance report</li>
+        <li><span class="tick">✓</span> GitHub &amp; LinkedIn profile optimization for students</li>
         <li><span class="tick">✓</span> No hidden charges</li>
       </ul>
     </div>
@@ -535,7 +588,7 @@
   <div class="wrap">
     <div class="section-head reveal">
       <div class="eyebrow">Why This Works</div>
-      <h2>Built for TOPS Technologies</h2>
+      <h2>Built for Your Institute</h2>
     </div>
 
     <div class="why-grid">
@@ -547,7 +600,7 @@
       <div class="why-item reveal">
         <div class="ico">🏷️</div>
         <h4>Your Brand Everywhere</h4>
-        <p>Portal, newsletter and certificates carry the TOPS Technologies name and logo.</p>
+        <p>Portal, newsletter and certificates carry your institute's name and logo.</p>
       </div>
       <div class="why-item reveal">
         <div class="ico">📈</div>
@@ -571,7 +624,7 @@
       <h2>Let's Get Started</h2>
       <p class="sub">
         Reply <strong style="color:#fff">YES</strong> and I will share the onboarding details.
-        Happy to schedule a short call to tailor this for TOPS Technologies.
+        Happy to schedule a short call to tailor this for <span class="inst">Your Institute</span>.
       </p>
 
       <div class="contact-grid">
@@ -606,10 +659,8 @@
       </div>
 
       <div class="cta-actions">
-        <a class="btn btn-wa" id="waBtn"
-           href="https://wa.me/919284157202?text=Hi%20Dr.%20Sachin%2C%20I%20am%20interested%20in%20the%20IICP%20partnership%20proposal%20for%20TOPS%20Technologies."
-           target="_blank" rel="noopener">💬 Send YES on WhatsApp</a>
-        <a class="btn btn-ghost" href="mailto:sachinambekar@outlook.com?subject=IICP%20Partnership%20Proposal%20for%20TOPS%20Technologies">✉️ Email Us</a>
+        <a class="btn btn-wa" id="waBtn" href="#" target="_blank" rel="noopener">💬 Send YES on WhatsApp</a>
+        <a class="btn btn-ghost" id="mailBtn" href="#">✉️ Email Us</a>
       </div>
     </div>
   </div>
@@ -633,98 +684,163 @@
 (function () {
   "use strict";
 
+  /* =========================================================
+     CONFIG — change the default institute name here
+     ========================================================= */
+  const CONFIG = {
+    instituteName: "Your Institute",     // default name shown on the page
+    phone:         "+91 9284157202",
+    email:         "sachinambekar@outlook.com",
+    website:       "https://iicpedu.github.io/",
+    price:         "9,500"
+  };
+
+  /* ---------- ELEMENTS ---------- */
+  const instInput = document.getElementById("instInput");
+  const toast     = document.getElementById("toast");
+  const waBtn     = document.getElementById("waBtn");
+  const mailBtn   = document.getElementById("mailBtn");
+  const copyBtn   = document.getElementById("copyBtn");
+
   /* ---------- CURRENT YEAR ---------- */
   document.getElementById("year").textContent = new Date().getFullYear();
 
   /* ---------- TOAST ---------- */
-  const toast = document.getElementById("toast");
   let toastTimer = null;
-
   function showToast(msg) {
     toast.textContent = msg;
     toast.classList.add("show");
     clearTimeout(toastTimer);
-    toastTimer = setTimeout(() => toast.classList.remove("show"), 2400);
+    toastTimer = setTimeout(() => toast.classList.remove("show"), 2600);
   }
 
-  /* ---------- PLAIN-TEXT VERSION (for WhatsApp / Email) ---------- */
-  const PLAIN_TEXT = `🚀 *Partnership Proposal for TOPS Technologies*
-*Making Your Students Job-Ready*
+  /* =========================================================
+     INSTITUTE NAME — live sync across page + text + buttons
+     ========================================================= */
+  function currentName() {
+    const raw = (instInput.value || "").trim();
+    return raw.length ? raw : CONFIG.instituteName;
+  }
 
-Hello Team TOPS Technologies,
+  function applyInstituteName() {
+    const name = currentName();
 
-I am *Dr. Sachin Ambekar*, Founder of *IICP (Industry Integrated Career Platform)*. I have 20+ years of experience in Corporate HR, Academia, and Entrepreneurship. I help institutes prepare students for jobs without extra work for staff.
+    /* 1. All spans marked .inst */
+    document.querySelectorAll(".inst").forEach(function (el) {
+      el.textContent = name;
+    });
 
-🌐 Visit our website: https://iicpedu.github.io/
+    /* 2. Page title */
+    document.title = "Partnership Proposal — IICP × " + name;
 
-*Proposal for TOPS Technologies:*
+    /* 3. WhatsApp button link */
+    const waMsg = "Hi Dr. Sachin, I am interested in the IICP partnership proposal for " + name + ".";
+    waBtn.href = "https://wa.me/919284157202?text=" + encodeURIComponent(waMsg);
 
-*1. Weekly Live Lecture*
-- 1 live online lecture every week.
-- 1 hour per lecture.
-- 4 live lectures per month.
-- Doubt clearing included.
+    /* 4. Email button link */
+    mailBtn.href = "mailto:" + CONFIG.email +
+      "?subject=" + encodeURIComponent("IICP Partnership Proposal for " + name) +
+      "&body=" + encodeURIComponent(
+        "Hello Dr. Sachin,\n\nWe are interested in the IICP placement enablement partnership for " +
+        name + ".\n\nPlease share the onboarding details.\n\nRegards,\n" + name
+      );
+  }
 
-*2. Placement Alerts*
-- Verified job and internship alerts.
-- Direct company application links.
-- Posted in your WhatsApp group.
-- No middlemen. No referral fees.
+  instInput.addEventListener("input", applyInstituteName);
+  instInput.addEventListener("change", applyInstituteName);
 
-*3. Student Portal with TOPS Technologies Name*
-- CV/resume builder.
-- Aptitude test app.
-- Self-introduction maker.
-- 500+ HR and technical interview questions.
+  /* =========================================================
+     PLAIN-TEXT PROPOSAL (auto-updates with the institute name)
+     ========================================================= */
+  function buildPlainText() {
+    const name = currentName();
+    const price = CONFIG.price;
 
-*4. Internship Project with Experience Letter & Certificate*
-- Students work on real live projects with our company.
-- Industry mentor guidance throughout the project.
-- Experience Letter issued after successful completion.
-- Completion Certificate with QR code verification.
-- Certificate issued by a registered firm.
+    return "🚀 *Partnership Proposal for " + name + "*\n" +
+"*Making Your Students Job-Ready*\n" +
+"\n" +
+"Hello Team " + name + ",\n" +
+"\n" +
+"I am *Dr. Sachin Ambekar*, Founder of *IICP (Industry Integrated Career Platform)*. I have 20+ years of experience in Corporate HR, Academia, and Entrepreneurship. I help computer institutes prepare students for jobs without extra work for staff.\n" +
+"\n" +
+"🌐 Visit our website: " + CONFIG.website + "\n" +
+"\n" +
+"*Proposal for " + name + ":*\n" +
+"\n" +
+"*1. Weekly Live Lecture*\n" +
+"- 1 live online lecture every week.\n" +
+"- 1 hour per lecture.\n" +
+"- 4 live lectures per month.\n" +
+"- Doubt clearing included.\n" +
+"\n" +
+"*2. Placement Alerts*\n" +
+"- Verified job and internship alerts.\n" +
+"- Direct company application links.\n" +
+"- Posted in your WhatsApp group.\n" +
+"- No middlemen. No referral fees.\n" +
+"\n" +
+"*3. Student Portal with Your Institute Name*\n" +
+"- CV/resume builder.\n" +
+"- Aptitude test app.\n" +
+"- Self-introduction maker.\n" +
+"- 500+ HR and technical interview questions.\n" +
+"\n" +
+"*4. Internship Project with Experience Letter & Certificate*\n" +
+"- Students work on real live projects with our company.\n" +
+"- Industry mentor guidance throughout the project.\n" +
+"- Experience Letter issued after successful completion.\n" +
+"- Completion Certificate with QR code verification.\n" +
+"- Certificate issued by a registered firm.\n" +
+"\n" +
+"*5. Weekly Newsletter with Your Institute Name*\n" +
+"- PDF with your logo and contact details.\n" +
+"- Placement alerts, interview tips, student spotlight.\n" +
+"- Ready to forward to students and parents.\n" +
+"\n" +
+"*6. Student Attendance Report*\n" +
+"- Simple report of student attendance.\n" +
+"- Shows who attended and who did not attend.\n" +
+"- Easy to download.\n" +
+"\n" +
+"*7. GitHub & LinkedIn Profile Optimization*\n" +
+"- Step-by-step GitHub and LinkedIn profile setup.\n" +
+"- Keyword optimization to appear in recruiter searches.\n" +
+"- Project showcase and portfolio building.\n" +
+"- Profile review and feedback from an industry mentor.\n" +
+"- Tips to improve recruiter response rate.\n" +
+"\n" +
+"*Commercial*\n" +
+"₹" + price + " per month.\n" +
+"All services above are included.\n" +
+"No hidden charges.\n" +
+"\n" +
+"*Why This Works for " + name + "*\n" +
+"- Zero extra workload for your staff.\n" +
+"- Everything comes with your institute name and logo.\n" +
+"- Improves placement results and brand reputation.\n" +
+"\n" +
+"If you want to start, reply *YES* and I will share onboarding details.\n" +
+"\n" +
+"📧 " + CONFIG.email + "\n" +
+"📞 " + CONFIG.phone + "\n" +
+"📍 Pune, Maharashtra\n" +
+"\n" +
+"Best Regards,\n" +
+"*Dr. Sachin Ambekar*\n" +
+"PhD, MBA (Marketing & HRM)\n" +
+"Founder – IICP | Powered by Equimedia Solutions";
+  }
 
-*5. Weekly Newsletter with TOPS Technologies Name*
-- PDF with your logo and contact details.
-- Placement alerts, interview tips, student spotlight.
-- Ready to forward to students and parents.
-
-*6. Student Attendance Report*
-- Simple report of student attendance.
-- Shows who attended and who did not attend.
-- Easy to download.
-
-*Commercial*
-₹9,500 per month.
-All services above are included.
-No hidden charges.
-
-*Why This Works for TOPS Technologies*
-- Zero extra workload for your staff.
-- Everything comes with TOPS Technologies name and logo.
-- Improves placement results and brand reputation.
-
-If you want to start, reply *YES* and I will share onboarding details.
-
-📧 sachinambekar@outlook.com
-📞 +91 9284157202
-📍 Pune, Maharashtra
-
-Best Regards,
-*Dr. Sachin Ambekar*
-PhD, MBA (Marketing & HRM)
-Founder – IICP | Powered by Equimedia Solutions`;
-
-  /* ---------- COPY BUTTON ---------- */
-  const copyBtn = document.getElementById("copyBtn");
-
+  /* =========================================================
+     COPY BUTTON
+     ========================================================= */
   async function copyText(text) {
     try {
       if (navigator.clipboard && window.isSecureContext) {
         await navigator.clipboard.writeText(text);
         return true;
       }
-      /* Fallback for non-secure contexts / older browsers */
+      /* Fallback for older browsers / non-secure contexts */
       const ta = document.createElement("textarea");
       ta.value = text;
       ta.setAttribute("readonly", "");
@@ -742,23 +858,27 @@ Founder – IICP | Powered by Equimedia Solutions`;
   }
 
   copyBtn.addEventListener("click", async function () {
-    const ok = await copyText(PLAIN_TEXT);
+    const ok = await copyText(buildPlainText());
     if (ok) {
       showToast("✅ Proposal copied — paste it on WhatsApp");
       const original = copyBtn.textContent;
       copyBtn.textContent = "✅ Copied!";
-      setTimeout(() => (copyBtn.textContent = original), 2000);
+      setTimeout(function () { copyBtn.textContent = original; }, 2000);
     } else {
       showToast("❌ Copy failed. Please select the text manually.");
     }
   });
 
-  /* ---------- PRINT BUTTON ---------- */
+  /* =========================================================
+     PRINT BUTTON
+     ========================================================= */
   document.getElementById("printBtn").addEventListener("click", function () {
     window.print();
   });
 
-  /* ---------- SCROLL REVEAL ---------- */
+  /* =========================================================
+     SCROLL REVEAL
+     ========================================================= */
   const revealEls = document.querySelectorAll(".reveal");
 
   if ("IntersectionObserver" in window) {
@@ -778,12 +898,12 @@ Founder – IICP | Powered by Equimedia Solutions`;
     revealEls.forEach(function (el) { el.classList.add("in"); });
   }
 
-  /* ---------- SAFETY: WhatsApp link fallback ---------- */
-  document.getElementById("waBtn").addEventListener("click", function (e) {
-    if (!/Mobi|Android|iPhone|iPad/i.test(navigator.userAgent)) {
-      /* Desktop still opens web.whatsapp.com — nothing to do, but keep link intact */
-    }
-  });
+  /* =========================================================
+     INIT — set everything on load
+     ========================================================= */
+  instInput.value = CONFIG.instituteName;
+  applyInstituteName();
+
 })();
 </script>
 
