@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Partnership Proposal — IICP × TOPS Technologies</title>
+<meta name="description" content="White-labelled placement enablement partnership proposal from IICP for TOPS Technologies." />
+
+<style>
+  /* ---------- RESET & BASE ---------- */
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --ink:        #0f172a;
+    --ink-soft:   #475569;
+    --line:       #e2e8f0;
+    --bg:         #f6f8fc;
+    --white:      #ffffff;
+    --brand:      #1d4ed8;
+    --brand-dark: #1739a8;
+    --brand-soft: #eef3ff;
+    --accent:     #f59e0b;
+    --green:      #059669;
+    --green-soft: #ecfdf5;
+    --radius:     14px;
+    --shadow-sm:  0 1px 2px rgba(15,23,42,.06), 0 2px 8px rgba(15,23,42,.05);
+    --shadow-md:  0 8px 24px rgba(15,23,42,.08);
+    --font: "Segoe UI", Roboto, -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--font);
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .wrap { width: 100%; max-width: 1000px; margin: 0 auto; padding: 0 20px; }
+
+  a { color: var(--brand); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  /* ---------- TOP BAR ---------- */
+  .topbar {
+    position: sticky; top: 0; z-index: 50;
+    background: rgba(255,255,255,.92);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--line);
+  }
+  .topbar-inner {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 16px; padding: 12px 0;
+  }
+  .logo { display: flex; align-items: center; gap: 10px; font-weight: 800; letter-spacing: .2px; }
+  .logo-mark {
+    width: 38px; height: 38px; border-radius: 10px;
+    background: linear-gradient(135deg, var(--brand), #4f7cff);
+    color: #fff; display: grid; place-items: center;
+    font-size: 14px; font-weight: 800; letter-spacing: .5px;
+  }
+  .logo-text small { display: block; font-size: 11px; font-weight: 500; color: var(--ink-soft); letter-spacing: .3px; }
+
+  .top-actions { display: flex; gap: 8px; }
+
+  .btn {
+    display: inline-flex; align-items: center; justify-content: center; gap: 7px;
+    padding: 10px 18px; border-radius: 10px; border: 1px solid transparent;
+    font-family: inherit; font-size: 14px; font-weight: 600;
+    cursor: pointer; transition: .18s ease; white-space: nowrap;
+  }
+  .btn-primary { background: var(--brand); color: #fff; }
+  .btn-primary:hover { background: var(--brand-dark); text-decoration: none; transform: translateY(-1px); }
+  .btn-ghost { background: #fff; color: var(--ink); border-color: var(--line); }
+  .btn-ghost:hover { border-color: #c7d2fe; background: var(--brand-soft); text-decoration: none; }
+  .btn-wa { background: var(--green); color: #fff; }
+  .btn-wa:hover { background: #047857; text-decoration: none; transform: translateY(-1px); }
+
+  /* ---------- HERO ---------- */
+  .hero {
+    background:
+      radial-gradient(900px 400px at 85% -10%, rgba(79,124,255,.28), transparent 60%),
+      linear-gradient(160deg, #0b1a3f 0%, #14296b 55%, #1d4ed8 130%);
+    color: #fff;
+    padding: 68px 0 76px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::after {
+    content: ""; position: absolute; inset: 0;
+    background-image:
+      linear-gradient(rgba(255,255,255,.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,.05) 1px, transparent 1px);
+    background-size: 44px 44px;
+    mask-image: radial-gradient(circle at 50% 30%, #000, transparent 75%);
+    pointer-events: none;
+  }
+  .hero .wrap { position: relative; z-index: 1; }
+
+  .pill {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(255,255,255,.12);
+    border: 1px solid rgba(255,255,255,.22);
+    color: #e6ecff;
+    padding: 7px 14px; border-radius: 999px;
+    font-size: 12.5px; font-weight: 600; letter-spacing: .6px; text-transform: uppercase;
+  }
+  .dot { width: 7px; height: 7px; border-radius: 50%; background: #34d399; box-shadow: 0 0 0 4px rgba(52,211,153,.22); }
+
+  .hero h1 {
+    font-size: clamp(30px, 5vw, 46px);
+    line-height: 1.15; font-weight: 800; letter-spacing: -.5px;
+    margin: 20px 0 14px;
+  }
+  .hero h1 span { color: #ffd977; }
+  .hero p.lead { font-size: 17px; color: #cfd9f5; max-width: 640px; }
+
+  .hero-meta {
+    display: flex; flex-wrap: wrap; gap: 10px; margin-top: 28px;
+  }
+  .chip {
+    background: rgba(255,255,255,.1);
+    border: 1px solid rgba(255,255,255,.16);
+    padding: 8px 14px; border-radius: 10px;
+    font-size: 13.5px; color: #e8eeff; font-weight: 500;
+  }
+
+  /* ---------- SECTION ---------- */
+  section { padding: 62px 0; }
+  .section-head { margin-bottom: 34px; }
+  .eyebrow {
+    font-size: 12px; font-weight: 800; letter-spacing: 1.6px;
+    text-transform: uppercase; color: var(--brand); margin-bottom: 8px;
+  }
+  h2 { font-size: clamp(24px, 3.4vw, 32px); line-height: 1.25; letter-spacing: -.4px; font-weight: 800; }
+  .sub { color: var(--ink-soft); margin-top: 8px; font-size: 16px; max-width: 700px; }
+
+  /* ---------- INTRO CARD ---------- */
+  .intro {
+    background: var(--white); border: 1px solid var(--line);
+    border-radius: var(--radius); box-shadow: var(--shadow-sm);
+    padding: 28px; display: grid; gap: 18px;
+    grid-template-columns: 1fr auto; align-items: center;
+  }
+  .intro p { color: var(--ink-soft); font-size: 15.5px; }
+  .intro strong { color: var(--ink); }
+  .stat-row { display: flex; gap: 26px; flex-wrap: wrap; }
+  .stat b { display: block; font-size: 26px; font-weight: 800; color: var(--brand); line-height: 1.1; }
+  .stat span { font-size: 12.5px; color: var(--ink-soft); letter-spacing: .3px; }
+
+  /* ---------- SERVICE CARDS ---------- */
+  .grid { display: grid; gap: 18px; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
+
+  .card {
+    background: var(--white);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 26px;
+    box-shadow: var(--shadow-sm);
+    transition: .22s ease;
+    position: relative;
+    overflow: hidden;
+  }
+  .card::before {
+    content: ""; position: absolute; left: 0; top: 0; height: 100%; width: 4px;
+    background: linear-gradient(180deg, var(--brand), #7aa2ff);
+    opacity: 0; transition: opacity .22s ease;
+  }
+  .card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); border-color: #c7d2fe; }
+  .card:hover::before { opacity: 1; }
+
+  .card-top { display: flex; align-items: center; gap: 12px; margin-bottom: 14px; }
+  .num {
+    flex: 0 0 auto;
+    width: 36px; height: 36px; border-radius: 10px;
+    background: var(--brand-soft); color: var(--brand);
+    display: grid; place-items: center;
+    font-weight: 800; font-size: 15px;
+    border: 1px solid #dbe4ff;
+  }
+  .card h3 { font-size: 17.5px; font-weight: 700; letter-spacing: -.2px; }
+
+  .card ul { list-style: none; display: grid; gap: 9px; }
+  .card li {
+    position: relative; padding-left: 24px;
+    font-size: 14.8px; color: var(--ink-soft);
+  }
+  .card li::before {
+    content: "";
+    position: absolute; left: 4px; top: 9px;
+    width: 6px; height: 6px; border-radius: 50%;
+    background: var(--brand); opacity: .55;
+  }
+  .card li strong { color: var(--ink); font-weight: 600; }
+
+  .tag {
+    display: inline-block; margin-top: 14px;
+    font-size: 11.5px; font-weight: 700; letter-spacing: .7px; text-transform: uppercase;
+    color: var(--green); background: var(--green-soft);
+    border: 1px solid #bbf7d0; border-radius: 999px; padding: 5px 11px;
+  }
+
+  /* ---------- PRICING ---------- */
+  .pricing { background: var(--white); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .price-box {
+    display: grid; gap: 30px;
+    grid-template-columns: minmax(260px, 360px) 1fr;
+    align-items: center;
+    background: linear-gradient(150deg, #0b1a3f, #1d4ed8);
+    color: #fff;
+    border-radius: 18px;
+    padding: 34px;
+    box-shadow: var(--shadow-md);
+  }
+  .price-amount { display: flex; align-items: baseline; gap: 8px; }
+  .price-amount .cur { font-size: 26px; font-weight: 700; opacity: .85; }
+  .price-amount .val { font-size: 52px; font-weight: 800; letter-spacing: -1.5px; line-height: 1; }
+  .price-amount .per { font-size: 15px; opacity: .8; }
+  .price-label { font-size: 13px; text-transform: uppercase; letter-spacing: 1.4px; opacity: .75; font-weight: 700; margin-bottom: 12px; }
+  .price-note { margin-top: 14px; font-size: 14px; color: #cbd8f7; }
+
+  .price-list { list-style: none; display: grid; gap: 11px; }
+  .price-list li { display: flex; gap: 11px; align-items: flex-start; font-size: 15px; color: #e7eeff; }
+  .tick {
+    flex: 0 0 auto; width: 20px; height: 20px; border-radius: 50%;
+    background: rgba(52,211,153,.18); color: #6ee7b7;
+    display: grid; place-items: center; font-size: 12px; font-weight: 900;
+    margin-top: 2px;
+  }
+
+  /* ---------- WHY ---------- */
+  .why-grid { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+  .why-item {
+    background: var(--white); border: 1px solid var(--line); border-radius: var(--radius);
+    padding: 24px; box-shadow: var(--shadow-sm);
+  }
+  .why-item .ico {
+    width: 42px; height: 42px; border-radius: 11px;
+    background: var(--brand-soft); color: var(--brand);
+    display: grid; place-items: center; font-size: 20px; margin-bottom: 14px;
+    border: 1px solid #dbe4ff;
+  }
+  .why-item h4 { font-size: 16px; font-weight: 700; margin-bottom: 6px; }
+  .why-item p { font-size: 14.5px; color: var(--ink-soft); }
+
+  /* ---------- CONTACT / CTA ---------- */
+  .cta {
+    background: linear-gradient(160deg, #0b1a3f, #1739a8);
+    color: #fff; border-radius: 18px; padding: 42px 34px;
+    box-shadow: var(--shadow-md);
+  }
+  .cta h2 { color: #fff; }
+  .cta .sub { color: #c9d6f7; }
+  .contact-grid {
+    display: grid; gap: 14px; margin-top: 28px;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  }
+  .contact-card {
+    background: rgba(255,255,255,.08);
+    border: 1px solid rgba(255,255,255,.16);
+    border-radius: 12px; padding: 16px 18px;
+    display: flex; align-items: center; gap: 12px;
+    transition: .2s ease;
+  }
+  .contact-card:hover { background: rgba(255,255,255,.14); transform: translateY(-2px); }
+  .contact-card .ci { font-size: 20px; }
+  .contact-card small { display: block; font-size: 11.5px; letter-spacing: .9px; text-transform: uppercase; opacity: .7; }
+  .contact-card span { font-size: 14.8px; font-weight: 600; word-break: break-word; }
+  .contact-card a { color: #fff; }
+  .contact-card a:hover { text-decoration: underline; }
+
+  .cta-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 30px; }
+
+  /* ---------- FOOTER ---------- */
+  footer {
+    background: #0b1a3f; color: #93a4c9;
+    padding: 32px 0; font-size: 13.5px;
+    border-top: 1px solid rgba(255,255,255,.08);
+  }
+  .foot-inner { display: flex; flex-wrap: wrap; gap: 14px; justify-content: space-between; align-items: center; }
+  footer strong { color: #fff; }
+
+  /* ---------- TOAST ---------- */
+  .toast {
+    position: fixed; left: 50%; bottom: 26px; transform: translate(-50%, 140%);
+    background: #0f172a; color: #fff;
+    padding: 13px 22px; border-radius: 11px;
+    font-size: 14.5px; font-weight: 600;
+    box-shadow: 0 12px 30px rgba(0,0,0,.28);
+    transition: transform .35s cubic-bezier(.2,.9,.3,1.3);
+    z-index: 100;
+  }
+  .toast.show { transform: translate(-50%, 0); }
+
+  /* ---------- REVEAL ---------- */
+  .reveal { opacity: 0; transform: translateY(18px); transition: opacity .6s ease, transform .6s ease; }
+  .reveal.in { opacity: 1; transform: none; }
+
+  @media (prefers-reduced-motion: reduce) {
+    .reveal { opacity: 1; transform: none; transition: none; }
+    html { scroll-behavior: auto; }
+  }
+
+  /* ---------- RESPONSIVE ---------- */
+  @media (max-width: 780px) {
+    .intro { grid-template-columns: 1fr; }
+    .price-box { grid-template-columns: 1fr; padding: 26px; }
+    .price-amount .val { font-size: 44px; }
+    .hero { padding: 50px 0 58px; }
+    section { padding: 48px 0; }
+    .top-actions .btn-ghost { display: none; }
+  }
+  @media (max-width: 520px) {
+    .logo-text { font-size: 14px; }
+    .btn { padding: 9px 14px; font-size: 13px; }
+    .card { padding: 22px; }
+    .cta { padding: 30px 22px; }
+  }
+
+  /* ---------- PRINT ---------- */
+  @media print {
+    body { background: #fff; }
+    .topbar, .cta-actions, .toast, .btn { display: none !important; }
+    .hero { background: #0b1a3f !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .card, .why-item, .price-box, .cta { box-shadow: none; break-inside: avoid; }
+    .price-box, .cta { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    section { padding: 26px 0; }
+    a { color: var(--ink); text-decoration: none; }
+  }
+</style>
+</head>
+
+<body>
+
+<!-- ================= TOP BAR ================= -->
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <div class="logo">
+      <div class="logo-mark">IICP</div>
+      <div class="logo-text">
+        Industry Integrated Career Platform
+        <small>Powered by Equimedia Solutions</small>
+      </div>
+    </div>
+    <div class="top-actions">
+      <button class="btn btn-ghost" id="copyBtn" type="button">📋 Copy Text</button>
+      <button class="btn btn-primary" id="printBtn" type="button">🖨️ Print / PDF</button>
+    </div>
+  </div>
+</header>
+
+<!-- ================= HERO ================= -->
+<section class="hero">
+  <div class="wrap">
+    <span class="pill"><span class="dot"></span> Partnership Proposal</span>
+    <h1>Making TOPS Technologies Students <span>100% Job-Ready</span></h1>
+    <p class="lead">
+      A fully white-labelled placement enablement programme — live lectures, verified placement
+      alerts, internship projects with experience letters, and a student portal carrying
+      <strong style="color:#fff">your brand</strong>. Zero extra workload for your staff.
+    </p>
+    <div class="hero-meta">
+      <span class="chip">🎓 20+ Years Industry &amp; Academic Experience</span>
+      <span class="chip">🏷️ 100% White-Labelled</span>
+      <span class="chip">⏱️ 1 Live Lecture / Week (60 min)</span>
+      <span class="chip">💰 ₹9,500 per month</span>
+    </div>
+  </div>
+</section>
+
+<!-- ================= INTRO ================= -->
+<section>
+  <div class="wrap">
+    <div class="intro reveal">
+      <div>
+        <p>
+          Hello Team <strong>TOPS Technologies</strong>,<br /><br />
+          I am <strong>Dr. Sachin Ambekar</strong>, Founder of <strong>IICP (Industry Integrated Career Platform)</strong>.
+          With over <strong>20 years</strong> of experience across Corporate HR, Academia and Entrepreneurship,
+          I help institutes prepare students for real jobs — <strong>without adding any extra work for your staff</strong>.
+        </p>
+        <p style="margin-top:14px">
+          🌐 Website: <a href="https://iicpedu.github.io/" target="_blank" rel="noopener">https://iicpedu.github.io/</a>
+        </p>
+      </div>
+      <div class="stat-row">
+        <div class="stat"><b>20+</b><span>Years Experience</span></div>
+        <div class="stat"><b>500+</b><span>Interview Qs</span></div>
+        <div class="stat"><b>4</b><span>Live Lectures / Month</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SERVICES ================= -->
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow">What You Get</div>
+      <h2>Proposal for TOPS Technologies</h2>
+      <p class="sub">Six ready-to-run modules. Everything is branded with the TOPS Technologies name and logo.</p>
+    </div>
+
+    <div class="grid">
+
+      <!-- 1 -->
+      <article class="card reveal">
+        <div class="card-top">
+          <div class="num">1</div>
+          <h3>Weekly Live Lecture</h3>
+        </div>
+        <ul>
+          <li><strong>1 live online lecture</strong> every week</li>
+          <li><strong>1 hour</strong> per lecture</li>
+          <li><strong>4 live lectures</strong> per month</li>
+          <li>Doubt clearing included</li>
+        </ul>
+        <span class="tag">Live &amp; Interactive</span>
+      </article>
+
+      <!-- 2 -->
+      <article class="card reveal">
+        <div class="card-top">
+          <div class="num">2</div>
+          <h3>Placement Alerts</h3>
+        </div>
+        <ul>
+          <li>Verified job and internship alerts</li>
+          <li>Direct company application links</li>
+          <li>Posted in your WhatsApp group</li>
+          <li>No middlemen. No referral fees.</li>
+        </ul>
+        <span class="tag">Daily Updates</span>
+      </article>
+
+      <!-- 3 -->
+      <article class="card reveal">
+        <div class="card-top">
+          <div class="num">3</div>
+          <h3>Student Portal — TOPS Branding</h3>
+        </div>
+        <ul>
+          <li>CV / resume builder</li>
+          <li>Aptitude test app</li>
+          <li>Self-introduction maker</li>
+          <li>500+ HR and technical interview questions</li>
+        </ul>
+        <span class="tag">Your Name &amp; Logo</span>
+      </article>
+
+      <!-- 4 -->
+      <article class="card reveal">
+        <div class="card-top">
+          <div class="num">4</div>
+          <h3>Internship Project + Experience Letter</h3>
+        </div>
+        <ul>
+          <li>Students work on <strong>real live projects</strong> with our company</li>
+          <li>Industry mentor guidance throughout the project</li>
+          <li><strong>Experience Letter</strong> issued after successful completion</li>
+          <li><strong>Completion Certificate</strong> with QR code verification</li>
+          <li>Certificate issued by a registered firm</li>
+        </ul>
+        <span class="tag">Most Valued Module</span>
+      </article>
+
+      <!-- 5 -->
+      <article class="card reveal">
+        <div class="card-top">
+          <div class="num">5</div>
+          <h3>Weekly Newsletter — TOPS Branding</h3>
+        </div>
+        <ul>
+          <li>PDF with your logo and contact details</li>
+          <li>Placement alerts, interview tips, student spotlight</li>
+          <li>Ready to forward to students and parents</li>
+        </ul>
+        <span class="tag">Zero Effort</span>
+      </article>
+
+      <!-- 6 -->
+      <article class="card reveal">
+        <div class="card-top">
+          <div class="num">6</div>
+          <h3>Student Attendance Report</h3>
+        </div>
+        <ul>
+          <li>Simple report of student attendance</li>
+          <li>Shows who attended and who did not attend</li>
+          <li>Easy to download</li>
+        </ul>
+        <span class="tag">Simple &amp; Clear</span>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ================= PRICING ================= -->
+<section class="pricing">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow">Commercials</div>
+      <h2>One Simple Monthly Price</h2>
+      <p class="sub">No setup fee. No hidden charges. Cancel anytime.</p>
+    </div>
+
+    <div class="price-box reveal">
+      <div>
+        <div class="price-label">All-Inclusive Plan</div>
+        <div class="price-amount">
+          <span class="cur">₹</span>
+          <span class="val">9,500</span>
+          <span class="per">/ month</span>
+        </div>
+        <p class="price-note">All six modules listed above are included in this single price.</p>
+      </div>
+      <ul class="price-list">
+        <li><span class="tick">✓</span> Weekly live lecture — 1 hour × 4 per month</li>
+        <li><span class="tick">✓</span> Verified placement alerts to your WhatsApp group</li>
+        <li><span class="tick">✓</span> Student portal with TOPS Technologies branding</li>
+        <li><span class="tick">✓</span> Live internship project + Experience Letter + Certificate</li>
+        <li><span class="tick">✓</span> Weekly white-labelled newsletter PDF</li>
+        <li><span class="tick">✓</span> Student attendance report</li>
+        <li><span class="tick">✓</span> No hidden charges</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ================= WHY ================= -->
+<section>
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow">Why This Works</div>
+      <h2>Built for TOPS Technologies</h2>
+    </div>
+
+    <div class="why-grid">
+      <div class="why-item reveal">
+        <div class="ico">⚡</div>
+        <h4>Zero Extra Workload</h4>
+        <p>We research, create and deliver. Your staff only forwards the material.</p>
+      </div>
+      <div class="why-item reveal">
+        <div class="ico">🏷️</div>
+        <h4>Your Brand Everywhere</h4>
+        <p>Portal, newsletter and certificates carry the TOPS Technologies name and logo.</p>
+      </div>
+      <div class="why-item reveal">
+        <div class="ico">📈</div>
+        <h4>Better Placement Results</h4>
+        <p>Job-ready students mean stronger placement numbers and happier parents.</p>
+      </div>
+      <div class="why-item reveal">
+        <div class="ico">🎯</div>
+        <h4>Admission Magnet</h4>
+        <p>A visible placement readiness system makes your institute easier to sell.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CTA / CONTACT ================= -->
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="cta reveal">
+      <div class="eyebrow" style="color:#ffd977">Next Step</div>
+      <h2>Let's Get Started</h2>
+      <p class="sub">
+        Reply <strong style="color:#fff">YES</strong> and I will share the onboarding details.
+        Happy to schedule a short call to tailor this for TOPS Technologies.
+      </p>
+
+      <div class="contact-grid">
+        <div class="contact-card">
+          <div class="ci">📧</div>
+          <div>
+            <small>Email</small>
+            <span><a href="mailto:sachinambekar@outlook.com">sachinambekar@outlook.com</a></span>
+          </div>
+        </div>
+        <div class="contact-card">
+          <div class="ci">📞</div>
+          <div>
+            <small>Phone / WhatsApp</small>
+            <span><a href="tel:+919284157202">+91 92841 57202</a></span>
+          </div>
+        </div>
+        <div class="contact-card">
+          <div class="ci">📍</div>
+          <div>
+            <small>Location</small>
+            <span>Pune, Maharashtra, India</span>
+          </div>
+        </div>
+        <div class="contact-card">
+          <div class="ci">🌐</div>
+          <div>
+            <small>Website</small>
+            <span><a href="https://iicpedu.github.io/" target="_blank" rel="noopener">iicpedu.github.io</a></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="cta-actions">
+        <a class="btn btn-wa" id="waBtn"
+           href="https://wa.me/919284157202?text=Hi%20Dr.%20Sachin%2C%20I%20am%20interested%20in%20the%20IICP%20partnership%20proposal%20for%20TOPS%20Technologies."
+           target="_blank" rel="noopener">💬 Send YES on WhatsApp</a>
+        <a class="btn btn-ghost" href="mailto:sachinambekar@outlook.com?subject=IICP%20Partnership%20Proposal%20for%20TOPS%20Technologies">✉️ Email Us</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+  <div class="wrap foot-inner">
+    <div>
+      <strong>Dr. Sachin Ambekar</strong> — PhD, MBA (Marketing &amp; HRM)<br />
+      Founder, IICP | Powered by Equimedia Solutions
+    </div>
+    <div>© <span id="year"></span> IICP — Industry Integrated Career Platform</div>
+  </div>
+</footer>
+
+<!-- ================= TOAST ================= -->
+<div class="toast" id="toast">Copied to clipboard</div>
+
+<script>
+(function () {
+  "use strict";
+
+  /* ---------- CURRENT YEAR ---------- */
+  document.getElementById("year").textContent = new Date().getFullYear();
+
+  /* ---------- TOAST ---------- */
+  const toast = document.getElementById("toast");
+  let toastTimer = null;
+
+  function showToast(msg) {
+    toast.textContent = msg;
+    toast.classList.add("show");
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(() => toast.classList.remove("show"), 2400);
+  }
+
+  /* ---------- PLAIN-TEXT VERSION (for WhatsApp / Email) ---------- */
+  const PLAIN_TEXT = `🚀 *Partnership Proposal for TOPS Technologies*
+*Making Your Students Job-Ready*
+
+Hello Team TOPS Technologies,
+
+I am *Dr. Sachin Ambekar*, Founder of *IICP (Industry Integrated Career Platform)*. I have 20+ years of experience in Corporate HR, Academia, and Entrepreneurship. I help institutes prepare students for jobs without extra work for staff.
+
+🌐 Visit our website: https://iicpedu.github.io/
+
+*Proposal for TOPS Technologies:*
+
+*1. Weekly Live Lecture*
+- 1 live online lecture every week.
+- 1 hour per lecture.
+- 4 live lectures per month.
+- Doubt clearing included.
+
+*2. Placement Alerts*
+- Verified job and internship alerts.
+- Direct company application links.
+- Posted in your WhatsApp group.
+- No middlemen. No referral fees.
+
+*3. Student Portal with TOPS Technologies Name*
+- CV/resume builder.
+- Aptitude test app.
+- Self-introduction maker.
+- 500+ HR and technical interview questions.
+
+*4. Internship Project with Experience Letter & Certificate*
+- Students work on real live projects with our company.
+- Industry mentor guidance throughout the project.
+- Experience Letter issued after successful completion.
+- Completion Certificate with QR code verification.
+- Certificate issued by a registered firm.
+
+*5. Weekly Newsletter with TOPS Technologies Name*
+- PDF with your logo and contact details.
+- Placement alerts, interview tips, student spotlight.
+- Ready to forward to students and parents.
+
+*6. Student Attendance Report*
+- Simple report of student attendance.
+- Shows who attended and who did not attend.
+- Easy to download.
+
+*Commercial*
+₹9,500 per month.
+All services above are included.
+No hidden charges.
+
+*Why This Works for TOPS Technologies*
+- Zero extra workload for your staff.
+- Everything comes with TOPS Technologies name and logo.
+- Improves placement results and brand reputation.
+
+If you want to start, reply *YES* and I will share onboarding details.
+
+📧 sachinambekar@outlook.com
+📞 +91 9284157202
+📍 Pune, Maharashtra
+
+Best Regards,
+*Dr. Sachin Ambekar*
+PhD, MBA (Marketing & HRM)
+Founder – IICP | Powered by Equimedia Solutions`;
+
+  /* ---------- COPY BUTTON ---------- */
+  const copyBtn = document.getElementById("copyBtn");
+
+  async function copyText(text) {
+    try {
+      if (navigator.clipboard && window.isSecureContext) {
+        await navigator.clipboard.writeText(text);
+        return true;
+      }
+      /* Fallback for non-secure contexts / older browsers */
+      const ta = document.createElement("textarea");
+      ta.value = text;
+      ta.setAttribute("readonly", "");
+      ta.style.position = "fixed";
+      ta.style.top = "-1000px";
+      ta.style.opacity = "0";
+      document.body.appendChild(ta);
+      ta.select();
+      const ok = document.execCommand("copy");
+      document.body.removeChild(ta);
+      return ok;
+    } catch (err) {
+      return false;
+    }
+  }
+
+  copyBtn.addEventListener("click", async function () {
+    const ok = await copyText(PLAIN_TEXT);
+    if (ok) {
+      showToast("✅ Proposal copied — paste it on WhatsApp");
+      const original = copyBtn.textContent;
+      copyBtn.textContent = "✅ Copied!";
+      setTimeout(() => (copyBtn.textContent = original), 2000);
+    } else {
+      showToast("❌ Copy failed. Please select the text manually.");
+    }
+  });
+
+  /* ---------- PRINT BUTTON ---------- */
+  document.getElementById("printBtn").addEventListener("click", function () {
+    window.print();
+  });
+
+  /* ---------- SCROLL REVEAL ---------- */
+  const revealEls = document.querySelectorAll(".reveal");
+
+  if ("IntersectionObserver" in window) {
+    const io = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("in");
+            io.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.12, rootMargin: "0px 0px -40px 0px" }
+    );
+    revealEls.forEach(function (el) { io.observe(el); });
+  } else {
+    revealEls.forEach(function (el) { el.classList.add("in"); });
+  }
+
+  /* ---------- SAFETY: WhatsApp link fallback ---------- */
+  document.getElementById("waBtn").addEventListener("click", function (e) {
+    if (!/Mobi|Android|iPhone|iPad/i.test(navigator.userAgent)) {
+      /* Desktop still opens web.whatsapp.com — nothing to do, but keep link intact */
+    }
+  });
+})();
+</script>
+
+</body>
+</html>
